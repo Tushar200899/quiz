@@ -16,7 +16,7 @@ if(isset($_POST['token']) && password_verify("logintoken",$_POST['token']))
         {
             if(password_verify($password,$datarow['password']))
             {
-                $_SESSION['id'] = $datarow['uid'];
+                $_SESSION['id'] = $datarow['id'];
                 $_SESSION['name'] = $datarow['name'];
                 echo 0;
             }
