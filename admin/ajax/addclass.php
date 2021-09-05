@@ -5,10 +5,10 @@
  {
 
     $name =test_input($_POST['name']);
+    $uid =test_input($_POST['uid']);
 
-
-      $check = $db->prepare('INSERT INTO cls_details(cname) VALUES(?)');
-      $data=array($name);
+      $check = $db->prepare('INSERT INTO cls_details(cname,uid) VALUES(?,?)');
+      $data=array($name,$uid);
       $execute= $check->execute($data);
       if($execute)
       {

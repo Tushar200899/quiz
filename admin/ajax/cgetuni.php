@@ -3,11 +3,11 @@ include('connection.php');
 session_start();
 if(isset($_POST['token']) && password_verify("getuni",$_POST['token']))
 {
-   $check = $db->prepare('SELECT * FROM uni_details');
+   $check = $db->prepare('SELECT * FROM uni_details ');
    $data = array();
    $execute = $check->execute($data);
    ?>
-   <select name="university" id="university" style="width:100%;color:#000;" >
+   <select name="university" id="university" style="width:100%;color:#000;"  onchange ="getcls();">
        <?php
        while($datarow = $check->fetch())
        {
@@ -16,11 +16,12 @@ if(isset($_POST['token']) && password_verify("getuni",$_POST['token']))
          <?php
         }?>
    </select>
- <?php 
- function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}
+   
+<?php 
+function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+  }
 }?>

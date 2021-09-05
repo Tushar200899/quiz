@@ -4,8 +4,9 @@ session_start();
 if(isset($_POST['token']) && password_verify("teacher",$_POST['token']))
 {
     $name = $_POST['name'];
+    $email= $_POST['email'];
 
-    $query = $db->prepare('SELECT * FROM teacher where id=?');
+    $query = $db->prepare('SELECT * FROM teachers where id=?');
     $data=array($name);
     $execute=$query->execute($data);
     if($query->rowcount()>0)
@@ -13,8 +14,10 @@ if(isset($_POST['token']) && password_verify("teacher",$_POST['token']))
         echo"teacher already added";
     }
     else{
-        $query = $db->prepare('INSERT INTO teacher(name) VALUES(?)');
-        $data=array($name);
+        
+        $password1_hash=password_hash(substr($name,0,4)."9876",PASSWORD_DEFAULT);
+        $query = $db->prepare('INSERT INTO teachers(name,email,password) VALUES(?,?,?)');
+        $data=array($name,$email,$password1_hash);
         $execute=$query->execute($data);
         if($execute)
         {
@@ -24,5 +27,11 @@ if(isset($_POST['token']) && password_verify("teacher",$_POST['token']))
             echo"wrong input";
         }
     }
-}
+}function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+  }
+
 ?>

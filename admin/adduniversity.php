@@ -18,8 +18,6 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
     <title>Document</title>
 </head>
 
@@ -62,16 +60,10 @@
                     <div class="container-fluid main-headbox">
                         <form action="">
                             <div class="form-group">
-                                <label for="class">University</label>
-                                <div class="contain-input">
-                                    <div class="list" id="list" style="width: 100%; float: left"></div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="name">Class:</label>
-                                <input type="text" class="form-control" placeholder="Enter class" id="cname">
-                            </div>
-                            <button type="submit" onclick="addclass();" class="btn btn-primary">Submit</button>
+                                <label for="name">university name:</label>
+                                <input type="text" class="form-control" placeholder="Enter name" id="name">
+                              </div>
+                              <button type="submit" onclick="adduni();" class="btn btn-primary">Submit</button>
                         </form>
                     </div>
                 </div>
@@ -81,49 +73,34 @@
         </div>
     </section>
     <script type="text/javascript">
-      getuni();
-      function getuni() {
-        var token = '<?php echo password_hash("getuni",PASSWORD_DEFAULT);?>';
-
-        $.ajax({
-          type: "post",
-          url: "ajax/getuni.php",
-          data: { token: token },
-          success: function (data) {
-            $("#list").html(data);
-          },
-        });
-      }
-    </script>s
-    <script type="text/javascript">
-    function addclass() {
-        var name = document.getElementById('cname').value ;
-        var uid = document.getElementById('university').value ;
-        var token='<?php echo password_hash("class",PASSWORD_DEFAULT);?>';
-        if(name!=""){
-            $.ajax(
-				{
-					type:'post',
-					url:"ajax/addclass.php",
-					data:{name:name,uid:uid,token:token},
-					success:function(data)
-					{
-						if(data ==0){
-                            alert('Class added successfully');
+        function adduni() {
+            var name = document.getElementById('name').value ;
+    
+            var token='<?php echo password_hash("university",PASSWORD_DEFAULT);?>';
+            if(name!=""){
+                $.ajax(
+                    {
+                        type:'post',
+                        url:"ajax/adduni.php",
+                        data:{name:name,token:token},
+                        success:function(data)
+                        {
+                            if(data ==0){
+                                alert('university added successfully');
+                            }
+                            else{
+                                alert(data);
+                            }
                         }
-                        else{
-                            alert(data);
-                        }
-					}
-				});
+                    });
+            }
+            
         }
-        
-    }
     </script>
 </body>
 
 </html>
 <script type="text/javascript">
-    $('form').submit(function (e) {
-        e.preventDefault();
-    });</script>
+    $('form').submit(function(e) {
+    e.preventDefault();
+});</script>
