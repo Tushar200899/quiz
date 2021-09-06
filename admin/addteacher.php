@@ -55,9 +55,9 @@
       </nav>
     </div>
     <div class="col-sm-12">
-      <div class="box">
+      <div class="box ">
         <div class="col-sm-3"></div>
-        <div class="col-sm-6">
+        <div class="col-sm-6 mbox">
           <div class="container-fluid main-headbox">
             <form action="">
               <div class="form-group">

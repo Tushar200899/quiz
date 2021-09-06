@@ -15,7 +15,7 @@ section{
     min-height: 100vh;
 }
 .main-headbox{
-    margin-top: 100px;
+    /* margin-top: 4.5em; */
     justify-content: center;
     align-items: center;
     border-width: 2px;
@@ -25,11 +25,15 @@ section{
     border-style: solid;
     background-color: whitesmoke;
     opacity: 10;
-    margin: 13em 0;
+
 }
-.box{
+.box,.mbox{
     display: flex;
     padding: 0;
+    min-height: 100vh!important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .heading{
     text-align: center;
@@ -62,7 +66,7 @@ span{
     }
     
 }
-@media screen and (max-width:300px) {
+@media screen and (max-width:575px) {
     .box{
         display: block;
     }

@@ -63,7 +63,7 @@
                     {
                         if(data==0)  {
                             alert('login successfull');
-                            window.location="dashboard.php";
+                            window.location="index.php";
                         }
                         else{
                             alert(data)
