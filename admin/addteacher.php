@@ -59,7 +59,7 @@
         <div class="col-sm-3"></div>
         <div class="col-sm-6 mbox">
           <div class="container-fluid main-headbox">
-            <form action="">
+            <form action="" autocomplete="off">
               <div class="form-group">
                 <label for="teacher">Add Teacher:</label>
                 <input type="text" class="form-control" placeholder="Enter name" id="tname" />

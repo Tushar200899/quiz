@@ -26,7 +26,7 @@
                         <h2>Teacher-Sign In</h2>
                     </div>
                     <div class="form">
-                        <form action="" method="post">
+                        <form action="" method="post" autocomplete="off">
                             <div class="username">
                                 <label for="name">Username</label>
                                 <input type="text" name="name" id="username" placeholder="Enter your username" required="text">

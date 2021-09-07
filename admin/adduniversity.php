@@ -18,6 +18,7 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>Document</title>
 </head>
 
@@ -58,7 +59,7 @@
                 <div class="col-sm-3"></div>
                 <div class="col-sm-6 mbox">
                     <div class="container-fluid main-headbox">
-                        <form action="">
+                        <form action="" autocomplete="off">
                             <div class="form-group">
                                 <label for="name">university name:</label>
                                 <input type="text" class="form-control" placeholder="Enter name" id="name">

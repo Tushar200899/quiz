@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>admin login</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/normalize.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../bootstrap.min.css">
+    <link rel="stylesheet" href="../normalize.min.css">
+    <link rel="stylesheet" href="../style.css">
     <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
@@ -26,7 +26,7 @@
                         <h2>Admin Sign In</h2>
                     </div>
                     <div class="form">
-                        <form action="" method="post">
+                        <form action="" method="post" autocomplete="off" >
                             <div class="username">
                                 <label for="name">Username</label>
                                 <input type="text" name="name" id="username" placeholder="Enter your username" required="text">

@@ -8,6 +8,7 @@ if(isset($_POST['token']) && password_verify("getuni",$_POST['token']))
    $execute = $check->execute($data);
    ?>
    <select name="university" id="university" style="width:100%;color:#000;" >
+   <option value="0">SELECT UNIVERSITY</option>
        <?php
        while($datarow = $check->fetch())
        {

@@ -60,7 +60,7 @@
                 <div class="col-sm-3"></div>
                 <div class="col-sm-6 mbox">
                     <div class="container-fluid main-headbox">
-                        <form action="">
+                        <form action="" autocomplete="off">
                             <div class="form-group">
                                 <label for="class">University</label>
                                 <div class="contain-input">
