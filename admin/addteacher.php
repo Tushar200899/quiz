@@ -125,13 +125,15 @@
     function addteacher() {
       var name = document.getElementById('tname').value;
       var email =  document.getElementById('email').value;
+      var uid = document.getElementById('university').value;
+      var classid = document.getElementById('class').value;
       var token = "<?php echo password_hash("teacher",PASSWORD_DEFAULT);?>"
 
       $.ajax(
         {
           type: 'post',
           url: "ajax/addt.php",
-          data: { name: name,email:email, token: token },
+          data: { name: name,email:email,uid:uid,classid:classid, token: token },
           success: function (data) {
             alert(data);
           }
